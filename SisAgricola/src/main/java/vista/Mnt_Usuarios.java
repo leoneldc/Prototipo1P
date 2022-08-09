@@ -111,62 +111,63 @@ public class Mnt_Usuarios extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
-        Pnl_ingresoDatos.setBackground(new java.awt.Color(163, 177, 138));
+        Pnl_ingresoDatos.setBackground(new java.awt.Color(253, 248, 225));
         Pnl_ingresoDatos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(52, 78, 65), 1, true));
 
+        Lbl_id.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_id.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_id.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_id.setText("ID USUARIO :");
 
         Txt_id.setEditable(false);
-        Txt_id.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_id.setBackground(new java.awt.Color(253, 248, 225));
         Txt_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Txt_id.setText("0");
         Txt_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
 
+        Lbl_nombre.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_nombre.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_nombre.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_nombre.setText("NOMBRE:");
 
-        Txt_nombre.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_nombre.setBackground(new java.awt.Color(253, 248, 225));
         Txt_nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_nombre.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
 
+        Lbl_apellido.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_apellido.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_apellido.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_apellido.setText("APELLIDO:");
 
-        Txt_apellido.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_apellido.setBackground(new java.awt.Color(253, 248, 225));
         Txt_apellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_apellido.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
 
+        Lbl_user.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_user.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_user.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_user.setText("USERNAME:");
 
-        Txt_user.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_user.setBackground(new java.awt.Color(253, 248, 225));
         Txt_user.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_user.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
         Txt_user.setDoubleBuffered(true);
 
+        Lbl_password.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_password.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_password.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_password.setText("PASSWORD:");
 
-        Txt_password.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_password.setBackground(new java.awt.Color(253, 248, 225));
         Txt_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_password.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
 
+        Lbl_email.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_email.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_email.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_email.setText("EMAIL:");
 
-        Txt_email.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_email.setBackground(new java.awt.Color(253, 248, 225));
         Txt_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
         Txt_email.setDoubleBuffered(true);
 
+        Lbl_estado.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_estado.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_estado.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_estado.setText("ESTADO:");
 
         Bg_estados.add(Rb_activo);
@@ -476,7 +477,7 @@ public class Mnt_Usuarios extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        Pnl_datos.setBackground(new java.awt.Color(163, 177, 138));
+        Pnl_datos.setBackground(new java.awt.Color(253, 248, 225));
         Pnl_datos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(52, 78, 65), 1, true));
 
         Tbl_Datos.setModel(new javax.swing.table.DefaultTableModel(
@@ -494,11 +495,11 @@ public class Mnt_Usuarios extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(Tbl_Datos);
 
+        Lbl_id4.setBackground(new java.awt.Color(253, 248, 225));
         Lbl_id4.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        Lbl_id4.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_id4.setText("BUSCAR ID Ó NOMBRE:");
 
-        Txt_busqueda.setBackground(new java.awt.Color(163, 177, 138));
+        Txt_busqueda.setBackground(new java.awt.Color(253, 248, 225));
         Txt_busqueda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Txt_busqueda.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(88, 129, 87)));
         Txt_busqueda.addKeyListener(new java.awt.event.KeyAdapter() {

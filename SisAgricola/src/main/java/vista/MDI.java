@@ -9,8 +9,10 @@ import javax.swing.JOptionPane;
 public class MDI extends javax.swing.JFrame {
 
     ProcesosRepetidos procesoRepetido = new ProcesosRepetidos();
-    String idBusqueda = LOGIN_SA.idCliente;
+    String idBusqueda = LOGIN_SA.idUsuario;
     private Mnt_Usuarios mnt_usuarios;
+    private Mnt_Productos mnt_productos;
+    private Mnt_SolicitudCompra mnt_solicitudcompra;
 
     public MDI() {
         initComponents();
@@ -20,7 +22,7 @@ public class MDI extends javax.swing.JFrame {
     public void Diseño() {
         Jdp_contenedor.setBackground(new Color(252, 239, 180));
         procesoRepetido.cursorMano(Mnb_menu);
-        setTitle("[ USUARIO: " + LOGIN_SA.nombreCliente.toUpperCase() + "   " + procesoRepetido.getFechaActual("gt") + " ]  ");
+        setTitle("[ USUARIO: " + LOGIN_SA.nombreUsuario.toUpperCase() + "   " + procesoRepetido.getFechaActual("gt") + " ]  ");
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +36,8 @@ public class MDI extends javax.swing.JFrame {
         Sbm_catalogo = new javax.swing.JMenu();
         Mnu_mantenimientos = new javax.swing.JMenu();
         MnI_Usuarios = new javax.swing.JMenuItem();
+        MnI_Productos = new javax.swing.JMenuItem();
+        MnI_OrdenDeCompra = new javax.swing.JMenuItem();
         Sbm_procesos = new javax.swing.JMenu();
         Mnu_procesos = new javax.swing.JMenu();
         Sbm_herramientas = new javax.swing.JMenu();
@@ -86,6 +90,22 @@ public class MDI extends javax.swing.JFrame {
             }
         });
         Mnu_mantenimientos.add(MnI_Usuarios);
+
+        MnI_Productos.setText("Productos");
+        MnI_Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnI_ProductosActionPerformed(evt);
+            }
+        });
+        Mnu_mantenimientos.add(MnI_Productos);
+
+        MnI_OrdenDeCompra.setText("Orden de Compra");
+        MnI_OrdenDeCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnI_OrdenDeCompraActionPerformed(evt);
+            }
+        });
+        Mnu_mantenimientos.add(MnI_OrdenDeCompra);
 
         Sbm_catalogo.add(Mnu_mantenimientos);
 
@@ -159,6 +179,28 @@ public class MDI extends javax.swing.JFrame {
         mnt_usuarios.toFront();
     }//GEN-LAST:event_MnI_UsuariosActionPerformed
 
+    private void MnI_ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnI_ProductosActionPerformed
+        mnt_productos = new Mnt_Productos();
+
+        Jdp_contenedor.add(mnt_productos);
+        Dimension desktopSize = Jdp_contenedor.getSize();
+        Dimension FrameSize = mnt_productos.getSize();
+        mnt_productos.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        mnt_productos.setVisible(true);
+        mnt_productos.toFront();
+    }//GEN-LAST:event_MnI_ProductosActionPerformed
+
+    private void MnI_OrdenDeCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnI_OrdenDeCompraActionPerformed
+        mnt_solicitudcompra = new Mnt_SolicitudCompra();
+
+        Jdp_contenedor.add(mnt_solicitudcompra);
+        Dimension desktopSize = Jdp_contenedor.getSize();
+        Dimension FrameSize = mnt_solicitudcompra.getSize();
+        mnt_solicitudcompra.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        mnt_solicitudcompra.setVisible(true);
+        mnt_solicitudcompra.toFront();
+    }//GEN-LAST:event_MnI_OrdenDeCompraActionPerformed
+
     public static void main(String args[]) {
         //FLATLAF
         FlatLightLaf.setup();
@@ -173,6 +215,8 @@ public class MDI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JMenu Btn_cerrarSesion;
     private javax.swing.JDesktopPane Jdp_contenedor;
+    private javax.swing.JMenuItem MnI_OrdenDeCompra;
+    private javax.swing.JMenuItem MnI_Productos;
     private javax.swing.JMenuItem MnI_Usuarios;
     public static javax.swing.JMenuBar Mnb_menu;
     public static javax.swing.JMenu Mnu_mantenimientos;

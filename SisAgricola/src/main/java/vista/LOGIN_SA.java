@@ -10,7 +10,7 @@ public class LOGIN_SA extends javax.swing.JFrame {
 
     int xMouse, yMouse;
 
-    public static String idCliente, nombreCliente;
+    public static String idUsuario, nombreUsuario;
     LoginDAO ldao = new LoginDAO();
     Login login = new Login();
     ProcesosRepetidos procesoRepetido = new ProcesosRepetidos();
@@ -264,8 +264,8 @@ public class LOGIN_SA extends javax.swing.JFrame {
         login.setUsername(usuario);
         login = ldao.query(login);
         if (newPassword.equals(login.getPassword())) {
-            idCliente=login.getId();
-            nombreCliente=login.getNombre()+" "+login.getApellido();
+            idUsuario=login.getId();
+            nombreUsuario=login.getNombre()+" "+login.getApellido();
             MDI mdiTrabajadores = new MDI();
             mdiTrabajadores.setVisible(true);
             this.dispose();
