@@ -358,7 +358,7 @@ public class Mnt_SolicitudCompra extends javax.swing.JInternalFrame {
     private void Btn_eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_eliminarMouseClicked
         int filaSeleccionada = Tbl_Asignaciones.getSelectedRow();
         if (filaSeleccionada >= 0) {
-            ordenes.setAsignacion(Tbl_Asignaciones.getValueAt(Tbl_Datos.getSelectedRow(), 0).toString());
+            ordenes.setAsignacion(Tbl_Asignaciones.getValueAt(Tbl_Asignaciones.getSelectedRow(), 0).toString());
             ordenesdao.delete(ordenes);
             cargarAsignaciones();
             procesosr.accionExitosa("¡ELIMINACIÓN EXITOSA!", "SE AH ELIMINADO LA SOLICITUD DE COMPRA CORRECTAMENTE");
@@ -381,12 +381,15 @@ public class Mnt_SolicitudCompra extends javax.swing.JInternalFrame {
             if (Float.parseFloat(cant) < 1) {
                 procesosr.accionErronea("¡ERROR!", "LA CANTIDAD TIENE QUE SER MAYOR A 0");
             } else {
-                ordenes.setCantidad(cant);
-                ordenes.setUsuario(LOGIN_SA.idUsuario);
-                ordenes.setEstado("0");
-                ordenesdao.insert(ordenes);
-                cargarAsignaciones();
-                procesosr.accionExitosa("¡REGISTRO EXITOSO!", "SE AH GENERADO LA SOLICITUD DE COMPRA CORRECTAMENTE");
+                if (cant.length()!=0) {
+                    ordenes.setCantidad(cant);
+                    ordenes.setUsuario(LOGIN_SA.idUsuario);
+                    ordenes.setEstado("0");
+                    ordenesdao.insert(ordenes);
+                    cargarAsignaciones();
+                    procesosr.accionExitosa("¡REGISTRO EXITOSO!", "SE AH GENERADO LA SOLICITUD DE COMPRA CORRECTAMENTE");
+
+                }
             }
         }
     }//GEN-LAST:event_Btn_guardarMouseClicked
@@ -402,15 +405,17 @@ public class Mnt_SolicitudCompra extends javax.swing.JInternalFrame {
     private void Tbl_AsignacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tbl_AsignacionesMouseClicked
         int filaSeleccionada = Tbl_Asignaciones.getSelectedRow();
         if (evt.getClickCount() == 2) {
-            ordenes.setProducto(Tbl_Datos.getValueAt(Tbl_Datos.getSelectedRow(), 0).toString());
             String cant = JOptionPane.showInputDialog("Ingrese la NUEVA cantidad que se requiere");
             if (Float.parseFloat(cant) < 1) {
                 procesosr.accionErronea("¡ERROR!", "LA CANTIDAD TIENE QUE SER MAYOR A 0");
             } else {
-                ordenes.setCantidad(cant);
-                ordenesdao.update(ordenes);
-                cargarAsignaciones();
-                procesosr.accionExitosa("¡MODIFICACIÓN EXITOSA!", "SE AH MODIFICADO LA SOLICITUD DE COMPRA CORRECTAMENTE");
+                if (cant.length()!=0) {
+                    ordenes.setAsignacion(Tbl_Asignaciones.getValueAt(Tbl_Asignaciones.getSelectedRow(), 0).toString());
+                    ordenes.setCantidad(cant);
+                    ordenesdao.update(ordenes);
+                    cargarAsignaciones();
+                    procesosr.accionExitosa("¡MODIFICACIÓN EXITOSA!", "SE AH MODIFICADO LA SOLICITUD DE COMPRA CORRECTAMENTE");
+                }
             }
         }
     }//GEN-LAST:event_Tbl_AsignacionesMouseClicked
