@@ -3,14 +3,16 @@ package vista;
 import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ProcesosRepetidos;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JOptionPane;
 
-public class MDI_Clientes extends javax.swing.JFrame {
+public class MDI extends javax.swing.JFrame {
 
     ProcesosRepetidos procesoRepetido = new ProcesosRepetidos();
-    String idBusqueda = LOGIN_Clientes.idCliente;
+    String idBusqueda = LOGIN_SA.idCliente;
+    private Mnt_Usuarios mnt_usuarios;
 
-    public MDI_Clientes() {
+    public MDI() {
         initComponents();
         Diseño();
     }
@@ -18,7 +20,7 @@ public class MDI_Clientes extends javax.swing.JFrame {
     public void Diseño() {
         Jdp_contenedor.setBackground(new Color(252, 239, 180));
         procesoRepetido.cursorMano(Mnb_menu);
-        setTitle("[ USUARIO: " + LOGIN_Clientes.nombreCliente.toUpperCase() + "   " + procesoRepetido.getFechaActual("gt") + " ]  ");
+        setTitle("[ USUARIO: " + LOGIN_SA.nombreCliente.toUpperCase() + "   " + procesoRepetido.getFechaActual("gt") + " ]  ");
     }
 
     @SuppressWarnings("unchecked")
@@ -31,6 +33,7 @@ public class MDI_Clientes extends javax.swing.JFrame {
         Sbm_archivos = new javax.swing.JMenu();
         Sbm_catalogo = new javax.swing.JMenu();
         Mnu_mantenimientos = new javax.swing.JMenu();
+        MnI_Usuarios = new javax.swing.JMenuItem();
         Sbm_procesos = new javax.swing.JMenu();
         Mnu_procesos = new javax.swing.JMenu();
         Sbm_herramientas = new javax.swing.JMenu();
@@ -75,6 +78,15 @@ public class MDI_Clientes extends javax.swing.JFrame {
         Sbm_catalogo.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
 
         Mnu_mantenimientos.setText("Mantenimientos");
+
+        MnI_Usuarios.setText("Usuarios");
+        MnI_Usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnI_UsuariosActionPerformed(evt);
+            }
+        });
+        Mnu_mantenimientos.add(MnI_Usuarios);
+
         Sbm_catalogo.add(Mnu_mantenimientos);
 
         Mnb_menu.add(Sbm_catalogo);
@@ -136,13 +148,24 @@ public class MDI_Clientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Btn_cerrarSesionMouseClicked
 
+    private void MnI_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnI_UsuariosActionPerformed
+        mnt_usuarios = new Mnt_Usuarios();
+
+        Jdp_contenedor.add(mnt_usuarios);
+        Dimension desktopSize = Jdp_contenedor.getSize();
+        Dimension FrameSize = mnt_usuarios.getSize();
+        mnt_usuarios.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        mnt_usuarios.setVisible(true);
+        mnt_usuarios.toFront();
+    }//GEN-LAST:event_MnI_UsuariosActionPerformed
+
     public static void main(String args[]) {
         //FLATLAF
         FlatLightLaf.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MDI_Clientes().setVisible(true);
+                new MDI().setVisible(true);
             }
         });
     }
@@ -150,6 +173,7 @@ public class MDI_Clientes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JMenu Btn_cerrarSesion;
     private javax.swing.JDesktopPane Jdp_contenedor;
+    private javax.swing.JMenuItem MnI_Usuarios;
     public static javax.swing.JMenuBar Mnb_menu;
     public static javax.swing.JMenu Mnu_mantenimientos;
     public static javax.swing.JMenu Mnu_procesos;

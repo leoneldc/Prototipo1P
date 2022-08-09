@@ -6,7 +6,7 @@ import controlador.Login;
 import controlador.ProcesosRepetidos;
 import modelo.LoginDAO;
 
-public class LOGIN_Clientes extends javax.swing.JFrame {
+public class LOGIN_SA extends javax.swing.JFrame {
 
     int xMouse, yMouse;
 
@@ -15,7 +15,7 @@ public class LOGIN_Clientes extends javax.swing.JFrame {
     Login login = new Login();
     ProcesosRepetidos procesoRepetido = new ProcesosRepetidos();
 
-    public LOGIN_Clientes() {
+    public LOGIN_SA() {
         initComponents();
         diseño();
     }
@@ -266,7 +266,7 @@ public class LOGIN_Clientes extends javax.swing.JFrame {
         if (newPassword.equals(login.getPassword())) {
             idCliente=login.getId();
             nombreCliente=login.getNombre()+" "+login.getApellido();
-            MDI_Clientes mdiTrabajadores = new MDI_Clientes();
+            MDI mdiTrabajadores = new MDI();
             mdiTrabajadores.setVisible(true);
             this.dispose();
         }else{
@@ -281,7 +281,7 @@ public class LOGIN_Clientes extends javax.swing.JFrame {
         FlatLightLaf.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LOGIN_Clientes().setVisible(true);
+                new LOGIN_SA().setVisible(true);
             }
         });
     }
