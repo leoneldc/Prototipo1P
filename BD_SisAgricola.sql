@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `SisAgricola`.`Productos` (
     `estatus_producto` TINYINT DEFAULT 0,
   PRIMARY KEY (`codigo_producto`)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
+INSERT INTO `productos` VALUES (NULL, 'Chorizo', 'Bremen', '20', '1'), (NULL, 'Salchichas', 'Bremen', '5', '1'), (NULL, 'Jamon', 'Toledo', '50', '1');
 -- -----------------------------------------------------
 -- Table `SisAgricola`.`SolicitudDeCompra`
 -- -----------------------------------------------------
